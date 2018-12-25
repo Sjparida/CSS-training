@@ -1,0 +1,176 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;    
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+   
+}
+
+.hero{
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8) , rgba(40, 180, 133, 0.8)) ,url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0 , 100% 75vh, 0 100%);
+}
+
+.header{    
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+}
+
+.navi{
+    display: flex;   
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;   
+    background: transparent;  
+    z-index: 10;     
+    padding: 2em 5em 0;   
+} 
+.branding{ 
+    position: relative;
+    top: 1em;
+    left: 1em;   
+
+}
+.logo{
+    height:2em;
+}
+
+.navi ul{
+    display: flex;
+
+}
+.navi ul>li{
+    list-style: none;
+    padding: 0 1em;
+}
+.navi ul>li>a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.primary-text{
+    font-family: inherit;   
+    color:#fff;    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.primary-heading{
+    display: block; /* without this property the animation is not working */
+    font-family: inherit;
+    font-weight: 100;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    animation: moveInLeft .56s ease-out;
+    backface-visibility: hidden;
+}
+
+.primary-subheading{
+    display: block;
+    font-family: inherit;
+    font-weight: 300;
+    font-size: .85em;
+    letter-spacing: 1px;
+    color: #fff;
+    animation: moveInRight .56s ease-out;
+    backface-visibility: hidden;
+}
+.primary-btn{
+    display: block;
+    width: 40%;
+    padding: .5em 3em;
+    background-color: #fff;
+    color: #000;   
+    border: none;
+    border-radius: 200px;
+    font-family: inherit;
+    font-size: .58em;
+    font-weight: 300;
+}
+
+.primary-btn:focus, .primary-btn:active{
+    outline: none;
+    cursor: pointer;   
+}
+
+.primary-btn:hover{
+    outline: none;
+    cursor: pointer;
+    animation: moveInLeft 5s ease-out;
+}
+
+
+/* Animation Tut 
+
+First define a animation with @keyframe keyword like @keyframe AnimationName then
+define the animation stages in the form of percentages means how the animation progress
+important animation properties are, Animation only provide us 2 attributes to change one is opacity and other is transform
+animation-name; animation-duration, anmation-timing-function
+*/
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    30%{
+        opacity: .5;
+    }
+
+    80%{
+        transform: translateX(15px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    30%{
+        opacity: .5;
+    }
+
+    80%{
+        transform: translateX(-100px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}

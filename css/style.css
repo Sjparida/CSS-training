@@ -7,104 +7,141 @@ Dark green: #28b485
 
 */
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;    
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
-   
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #000;
+  padding: 1em;
 }
 
-.hero{
-    height: 95vh;
-    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8) , rgba(40, 180, 133, 0.8)) ,url(../img/hero.jpg);
-    background-size: cover;
-    background-position: top;
-    clip-path: polygon(0 0, 100% 0 , 100% 75vh, 0 100%);
+.hero {
+  /* height: 95vh;
+  background-image: linear-gradient( to right bottom, rgba(232, 2, 2, 0.38), rgba(54, 11, 123, 0.38) ), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); */
+
+  height: 80vh;
+  background-image: linear-gradient( to right bottom, rgba(232, 2, 2, 0.38), rgba(54, 11, 123, 0.38) ), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
 }
 
-.header{    
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+/* Branding */
 
+.branding {
+  top: 1em;
+  left: 1em;
+  width: 12em;
+  /* background-image: url(../img/logo.png); */
 }
 
-.navi{
-    display: flex;   
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;   
-    background: transparent;  
-    z-index: 10;     
-    padding: 2em 5em 0;   
-} 
-.branding{ 
-    position: relative;
-    top: 1em;
-    left: 1em;   
+/* Typography */
 
-}
-.logo{
-    height:2em;
-}
-
-.navi ul{
-    display: flex;
-
-}
-.navi ul>li{
-    list-style: none;
-    padding: 0 1em;
-}
-.navi ul>li>a{
-    text-decoration: none;
-    color: #fff;
-}
-
-
-.primary-text{
-    font-family: inherit;   
-    color:#fff;    
+p{
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
 }
 
-.primary-heading{
+.secHeading {
     display: block; /* without this property the animation is not working */
     font-family: inherit;
-    font-weight: 100;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #fff;
-    animation: moveInLeft .56s ease-out;
+    font-weight: 500;
+    font-size: 1.25em;
+    text-align:center;
+    /* text-transform: uppercase; */
+    /* letter-spacing: -1px; */
+    color: #c2d011 ;
+    animation: moveInUp 0.56s ease-out;
     backface-visibility: hidden;
+  }
+  
+   .secSubHeading{
+      display: block;
+      font-family: inherit;
+      font-weight: 300;
+      font-size: .65em;
+      text-align:center;
+      letter-spacing: 1px;
+      color: #202a30;
+      padding: 2em 15em;
+      animation: moveInUp .56s ease-out;
+      backface-visibility: hidden;
+  }
+
+
+.header {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
-.primary-subheading{
+.navigation {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  background: transparent;
+  /* z-index: 10;      */
+  padding: 2em 5em 0;
+}
+
+.navigation ul {
+  display: flex;
+}
+.navigation ul > li {
+  list-style: none;
+  padding: 0 1em;
+}
+.navigation ul > li > a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.primary-text {
+  font-family: inherit;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.primary-heading {
+  display: block; /* without this property the animation is not working */
+  font-family: inherit;
+  font-weight: 100;
+  font-size: 1.8em;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: #fff;
+  animation: moveInLeft 0.56s ease-out;
+  backface-visibility: hidden;
+}
+
+ .primary-subheading{
     display: block;
     font-family: inherit;
     font-weight: 300;
-    font-size: .85em;
+    font-size: .55em;
     letter-spacing: 1px;
     color: #fff;
     animation: moveInRight .56s ease-out;
     backface-visibility: hidden;
 }
-.primary-btn{
+/*.primary-btn{
     display: block;
     width: 40%;
     padding: .5em 3em;
@@ -126,51 +163,164 @@ body{
     outline: none;
     cursor: pointer;
     animation: moveInLeft 5s ease-out;
-}
-
+} */
 
 /* Animation Tut 
-
 First define a animation with @keyframe keyword like @keyframe AnimationName then
 define the animation stages in the form of percentages means how the animation progress
 important animation properties are, Animation only provide us 2 attributes to change one is opacity and other is transform
 animation-name; animation-duration, anmation-timing-function
 */
 
-@keyframes moveInLeft{
-    0%{
-        opacity: 0;
-        transform: translateX(-80px);
-    }
-    30%{
-        opacity: .5;
-    }
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  30% {
+    opacity: 0.5;
+  }
 
-    80%{
-        transform: translateX(15px);
-    }
+  80% {
+    transform: translateX(15px);
+  }
 
-    100%{
-        opacity: 1;
-        transform: translate(0);
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  30% {
+    opacity: 0.5;
+  }
+
+  80% {
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+  @keyframes moveInUp {
+    0% {
+      opacity: 0;
+     
+    }
+    30% {
+      opacity: 0.5;
+      transform: translateY(-50px);
+    }
+  
+    /* 80% {
+      transform: translateX(-100px);
+    } */
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
 }
 
-@keyframes moveInRight{
-    0%{
-        opacity: 0;
-        transform: translateX(10px);
-    }
-    30%{
-        opacity: .5;
-    }
+/* Button */
 
-    80%{
-        transform: translateX(-100px);
-    }
+.btn {
+    padding: .65em 3em;
+    font-family: inherit;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    border-radius: 200px;
+    cursor: pointer;
+}
 
-    100%{
-        opacity: 1;
-        transform: translate(0);
-    }
+.btn:link,
+.btn:visited,
+.btn:focus {
+  outline: none;
+  border: 0;
+  transition: all .25s;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    transition: all .25s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+
+}
+
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+
+}
+
+.btn-white {    
+    color: #000;
+background: rgba(214, 228, 23, .65);
+    margin: 2em 0;
+}
+
+
+
+/* Info Section */
+
+.info{
+    /* height: 100vh; */
+    padding: 10em 5em;
+}
+
+.yogaBenefit{
+    display: flex;   
+    align-items: center;
+    justify-content: center;
+}
+
+.beImg{
+
+    width: 100%;
+    /* background: url("../img/benefit.png"); */
+}
+
+.roundIcon{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: #fff;
+    margin: 1.5em 0;
+}
+
+.blue{
+    background-color: #7099d4;
+}
+
+.pink{
+    background-color: #d27fa2;
+}
+.yellow{
+    background-color: #e6b268;
+}
+.aqua{
+    background-color: #79c1ca;
+}
+
+.block{  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 5em;
+}
+
+.dummy{
+    height: 100vh;
+    background: rgba(215, 223, 234, 0.55);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 }
